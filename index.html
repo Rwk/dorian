@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Le Quiz de Noël !</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>Le Quiz de Noël !</h1>
+        <p>Réponds aux questions pour découvrir la surprise !</p>
+    </header>
+    <main>
+        <section class="quiz-section">
+            <h2>Questions</h2>
+            <div id="quiz-container">
+                <!-- Questions dynamiques ici -->
+            </div>
+        </section>
+        <section class="indices-section">
+          <h2>Indices</h2>
+          <div id="indices-container">
+              <!-- Cartes avec indices -->
+              <div class="card" data-index="1">
+                  <img src="assets/indice1.webp" alt="Indice 1" class="hidden">
+              </div>
+              <div class="card" data-index="2">
+                  <img src="assets/indice2.webp" alt="Indice 2" class="hidden">
+              </div>
+              <div class="card" data-index="3">
+                  <img src="assets/indice3.webp" alt="Indice 3" class="hidden">
+              </div>
+              <div class="card" data-index="4">
+                  <img src="assets/indice4.webp" alt="Indice 4" class="hidden">
+              </div>
+              <div class="card" data-index="5">
+                  <img src="assets/indice5.webp" alt="Indice 5" class="hidden">
+              </div>
+              <div class="card" data-index="6">
+                  <img src="assets/indice6.webp" alt="Indice 6" class="hidden">
+              </div>
+          </div>
+      </section>
+    </main>
+    <footer>
+      <div id="final-step" class="hidden">
+          <p>Où allons-nous ?</p>
+          <input type="text" id="final-answer" placeholder="Saisis ta réponse">
+          <button id="validate-btn">Valider</button>
+      </div>
+      <div id="final-photo" class="hidden">
+          <h2>Bravo !</h2>
+          <img src="assets/surprise.jpg" alt="Surprise">
+          <p>Tu viens avec nous à Disneyland Paris ! 🎉</p>
+      </div>
+    </footer>
+    <script src="script.js"></script>
+</body>
+</html>

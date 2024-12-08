@@ -1,0 +1,212 @@
+/* Reset */
+body, h1, h2, p, input, button {
+  margin: 0;
+  padding: 0;
+  font-family: 'Arial', sans-serif;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #e6e6e6; /* Fond clair pour contraster avec les couleurs vives */
+  color: #333;
+  line-height: 1.6;
+}
+
+header {
+  text-align: center;
+  padding: 20px;
+  background-color: #e50914; /* Rouge vif Spiderman */
+  color: white;
+}
+
+header h1 {
+  font-size: 2.5rem;
+  margin-bottom: 10px;
+}
+
+main {
+  display: flex;
+  gap: 20px;
+  padding: 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.quiz-section, .indices-section {
+  flex: 1;
+  background-color: white;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.quiz-section h2, .indices-section h2 {
+  margin-bottom: 15px;
+  font-size: 1.5rem;
+  color: #0047ab; /* Bleu Spiderman */
+}
+
+#quiz-container {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+#indices-container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+}
+
+/* Carte contenant l'image */
+.card {
+  position: relative;
+  background-color: #0047ab; /* Fond bleu avant révélation */
+  color: white;
+  height: 150px;
+  width: 150px;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.5rem;
+  cursor: pointer;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  overflow: hidden; /* Cache tout ce qui dépasse */
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+/* Les images restent cachées par défaut */
+.card img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0;
+  pointer-events: none; /* Empêche toute interaction avec l'image */
+  transition: opacity 0.3s ease-in-out;
+}
+
+/* Lorsqu'une image est révélée */
+.card img.revealed {
+  opacity: 1; /* L'image devient visible */
+}
+
+.card:hover {
+  transform: scale(1.05);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.card.flipped {
+  background-color: #e50914; /* Rouge vif Spiderman */
+  color: #fff;
+}
+
+#final-step {
+  text-align: center;
+  margin-top: 20px;
+  padding: 20px;
+  background-color: #fefefe;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+#final-step.hidden, #final-photo.hidden {
+  display: none;
+}
+
+#final-answer {
+  padding: 10px;
+  font-size: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  margin-right: 10px;
+}
+
+#validate-btn {
+  padding: 10px 15px;
+  font-size: 1rem;
+  color: white;
+  background-color: #e50914; /* Rouge vif */
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+#validate-btn:hover {
+  background-color: #c40812;
+}
+
+/* Ajout d'effets spécifiques */
+header {
+  border-bottom: 5px solid #0047ab; /* Bandeau bleu */
+}
+
+.quiz-section {
+  border: 3px solid #e50914; /* Encadrement rouge */
+}
+
+.indices-section {
+  border: 3px solid #0047ab; /* Encadrement bleu */
+}
+
+#final-photo {
+  text-align: center;
+  margin-top: 20px;
+  padding: 20px;
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+#final-photo img {
+  max-width: 50%; /* Réduit la taille maximale à 50% de la largeur de l'écran */
+  height: auto; /* Garde les proportions de l'image */
+  border-radius: 10px;
+  margin-bottom: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Ajoute une ombre pour un effet esthétique */
+}
+
+.option-btn {
+  background: linear-gradient(90deg, #e50914, #0047ab); /* Dégradé rouge-bleu */
+  color: white;
+  font-weight: bold;
+  font-size: 1rem;
+  padding: 10px 20px;
+  margin: 5px 0;
+  border: 2px solid #e50914;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+  text-transform: uppercase;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.option-btn:hover {
+  background: linear-gradient(90deg, #0047ab, #e50914); /* Inverse les couleurs au survol */
+  border-color: #0047ab;
+  transform: scale(1.05); /* Agrandit légèrement */
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+}
+
+.option-btn:active {
+  transform: scale(0.95); /* Effet de clic */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.option-btn:focus {
+  outline: none;
+  border-color: #f1c40f; /* Bordure dorée pour mettre en avant */
+}
+
+#quiz-container ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+#quiz-container li {
+  margin-bottom: 10px;
+}
